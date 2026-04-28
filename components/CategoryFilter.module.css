@@ -1,0 +1,89 @@
+.filterBar {
+  padding: 16px 24px 0;
+  overflow: hidden;
+}
+
+.filterScroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.filterScroll::-webkit-scrollbar { display: none; }
+
+.filterBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+
+.filterBtn:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+.icon { font-size: 12px; }
+
+.count {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  background: var(--bg-elevated);
+  padding: 1px 5px;
+  border-radius: 4px;
+  color: var(--text-muted);
+  margin-left: 2px;
+}
+
+/* Active states per category */
+.active.cat_all {
+  border-color: var(--text-primary);
+  color: var(--bg);
+  background: var(--text-primary);
+}
+
+.active.cat_cars {
+  border-color: var(--cat-cars);
+  color: var(--cat-cars);
+  background: rgba(255, 107, 53, 0.1);
+}
+
+.active.cat_bikes {
+  border-color: var(--cat-bikes);
+  color: #1a1a00;
+  background: var(--cat-bikes);
+}
+
+.active.cat_phones {
+  border-color: var(--cat-phones);
+  color: var(--cat-phones);
+  background: rgba(71, 196, 255, 0.1);
+}
+
+.active.cat_computers {
+  border-color: var(--cat-computers);
+  color: var(--cat-computers);
+  background: rgba(200, 71, 255, 0.1);
+}
+
+.active .count {
+  background: rgba(255,255,255,0.15);
+  color: inherit;
+}
+
+@media (max-width: 600px) {
+  .filterBar { padding: 12px 16px 0; }
+}

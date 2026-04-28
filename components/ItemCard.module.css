@@ -1,0 +1,140 @@
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+}
+
+/* Image area */
+.imgWrap {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .img {
+  transform: scale(1.05);
+}
+
+.imgFallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-elevated);
+  font-family: var(--font-display);
+  font-size: 64px;
+  color: var(--text-muted);
+}
+
+/* Category gradient overlays */
+.cars    { background: linear-gradient(135deg, #1a0d08 0%, #0a0a0b 100%); }
+.bikes   { background: linear-gradient(135deg, #1a1a00 0%, #0a0a0b 100%); }
+.phones  { background: linear-gradient(135deg, #001a25 0%, #0a0a0b 100%); }
+.computers { background: linear-gradient(135deg, #150020 0%, #0a0a0b 100%); }
+
+/* Category pills */
+.catPill {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.pill_cars      { background: rgba(255,107,53,0.15); color: var(--cat-cars); border: 1px solid rgba(255,107,53,0.3); }
+.pill_bikes     { background: rgba(232,255,71,0.15); color: var(--cat-bikes); border: 1px solid rgba(232,255,71,0.3); }
+.pill_phones    { background: rgba(71,196,255,0.15); color: var(--cat-phones); border: 1px solid rgba(71,196,255,0.3); }
+.pill_computers { background: rgba(200,71,255,0.15); color: var(--cat-computers); border: 1px solid rgba(200,71,255,0.3); }
+
+/* Card body */
+.body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: 0.03em;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.props {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.prop {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.propLabel {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.propValue {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-align: right;
+}
+
+.cta {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  transition: color var(--transition);
+}
+
+.card:hover .cta {
+  color: var(--accent);
+}
+
+.arrow {
+  transition: transform var(--transition);
+}
+
+.card:hover .arrow {
+  transform: translateX(4px);
+}

@@ -1,0 +1,234 @@
+.page {
+  padding: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 28px;
+  transition: all var(--transition);
+}
+
+.backBtn:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+.backArrow {
+  transition: transform var(--transition);
+}
+
+.backBtn:hover .backArrow {
+  transform: translateX(-3px);
+}
+
+/* Layout */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  min-height: 480px;
+}
+
+/* Image panel */
+.imgPanel {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+}
+
+.cars      { background: linear-gradient(160deg, #1f0f07 0%, #0d0d0e 100%); }
+.bikes     { background: linear-gradient(160deg, #1a1900 0%, #0d0d0e 100%); }
+.phones    { background: linear-gradient(160deg, #001d2e 0%, #0d0d0e 100%); }
+.computers { background: linear-gradient(160deg, #180025 0%, #0d0d0e 100%); }
+
+.categoryLabel {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.4);
+  z-index: 2;
+}
+
+.catIcon { font-size: 14px; }
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.imgFallback {
+  font-family: var(--font-display);
+  font-size: 120px;
+  color: var(--text-muted);
+  opacity: 0.3;
+}
+
+.imgGlow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Info panel */
+.infoPanel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nameArea {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.itemName {
+  font-family: var(--font-display);
+  font-size: 42px;
+  letter-spacing: 0.04em;
+  line-height: 1.05;
+  color: var(--text-primary);
+}
+
+.catBadge {
+  display: inline-flex;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.badge_cars      { background: rgba(255,107,53,0.1); color: var(--cat-cars); border: 1px solid rgba(255,107,53,0.3); }
+.badge_bikes     { background: rgba(232,255,71,0.1); color: var(--cat-bikes); border: 1px solid rgba(232,255,71,0.3); }
+.badge_phones    { background: rgba(71,196,255,0.1); color: var(--cat-phones); border: 1px solid rgba(71,196,255,0.3); }
+.badge_computers { background: rgba(200,71,255,0.1); color: var(--cat-computers); border: 1px solid rgba(200,71,255,0.3); }
+
+.divider {
+  height: 1px;
+  background: var(--border);
+}
+
+.specsSection {
+  flex: 1;
+}
+
+.specsHeading {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.specsList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.specRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 14px;
+  border-radius: 8px;
+  background: var(--bg-elevated);
+  border: 1px solid transparent;
+  animation: fadeUp 0.4s ease both;
+  transition: border-color var(--transition);
+}
+
+.specRow:hover {
+  border-color: var(--border);
+}
+
+.specLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+
+.specValue {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.specVal_cars      { color: var(--cat-cars); }
+.specVal_bikes     { color: var(--cat-bikes); }
+.specVal_phones    { color: var(--cat-phones); }
+.specVal_computers { color: var(--cat-computers); }
+
+.footer {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.statBubble {
+  flex: 1;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.statNum {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+}
+
+.statLabel {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 768px) {
+  .page { padding: 16px; }
+  .layout { grid-template-columns: 1fr; }
+  .imgPanel { min-height: 260px; }
+  .infoPanel { padding: 20px; }
+  .itemName { font-size: 32px; }
+}
